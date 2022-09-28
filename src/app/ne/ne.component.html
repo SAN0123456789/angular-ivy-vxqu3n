@@ -1,0 +1,19 @@
+<h2>fruits available..></h2>
+<ul class="news">
+  <li
+    *ngFor="let fruit of fruits"
+    [class.selected]="fruit === sf"
+    (click)="onSelect(fruit)" >
+    <span class="badge">{{ fruit.id }} </span >{{ fruit.name }}
+  </li>
+</ul>
+
+<div *ngIf="sf">
+  <h2>{{ sf.name | uppercase }} details</h2>
+  <div><span>id: </span>{{ sf.id }}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="sf.name" placeholder="PLACE" />
+    </label>
+  </div>
+</div>
